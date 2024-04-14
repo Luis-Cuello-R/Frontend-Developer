@@ -1,0 +1,2 @@
+html por sus siglas en igles es un lenguaje de marcado de ipertexto. es to en pocas palabras quiere decir que html nos va a servir para estructurar toda nuestra pagina web. es el esqueleto de nuestra pagina
+css (hoja de estilo en cascada) nos va a permitir poder estilizar nuestro esqueleto ya compuesto por texto, imagenes, botones etc. dandole vida a nuestro sitio web.
