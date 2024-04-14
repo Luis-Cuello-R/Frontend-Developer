@@ -1,0 +1,8 @@
+se dice que todo loque codificamos en html y css nuestros navegadores no lo entienden tal cual. para ello necesitan de motores de renderizado cullas funsiones son:
+- el primer paso es transformar el html en objetos que el pueda entender esto se conoce como DOM (Document objet model)
+- el segundo paso que tiene que realizar nuestro motor de render es calcular cada uno de los estilos que tiene que ir en cada uno de los nodos. el DOM lo que haces es 
+ir esturcturando todas las etiquetas. coje cada uno de los estilos y los añade a cada uno de los elementos de esa estructura que que va construllendo en el DOM
+- en este paso se calcula las dimensiones de los nodos. donde van, que tamaño tienes,etc
+- por cuato paso es pintar nuestras cajas (box). una ves tiene toda nuestra estructura de html, todo el css y todas las dimenciones lo que hace el motor es basicamente pintarlas
+- por último coje cada una de esas cosas que ya pintó que pueden ir en diferentes capas. lo que hace más o menos es "tomar una foto" y esa imagen es lo que el va a renderizar. 
+(se dice de renderizar, el resultado final que muestra el navegador)
