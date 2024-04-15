@@ -1,0 +1,29 @@
+css (hoja de estilos en cascada)
+
+de mayor a menor especificidad:
+
+x 0 0 0 0 -> !important
+  x 0 0 0 -> estilos en linea
+    x 0 0 -> #id
+        x -> elementos y pseudoelementos
+        0 -> selector universal
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #platzi {
+            color: red; 
+        }
+        .master{
+            color: springgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="platzi" class="master">agua</div>
+</body>
+</html>
