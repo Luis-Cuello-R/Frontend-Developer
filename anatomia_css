@@ -1,0 +1,6 @@
+h1(*1){
+  color(*2): pink(*3);
+}
+*1 SELECTOR: es ese puente que nos comunica el html y el css
+*2 PROPIEDAD: existen muchos tipos para muchas cosas
+*3 VALOR: lo que le asignamos a la propiedad. puede ser un color o cualquier cosa que requiera nuestro codigo
