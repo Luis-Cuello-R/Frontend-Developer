@@ -1,0 +1,317 @@
+Selectores basicos:
+de tipo -> div {...}
+de clase -> .elemento {...}
+de id -> #id-del-elemento {...}
+de atributo -> div a[href="..."] {...}
+universal -> * {...}
+
+Selectores combinadores:
+descendientes -> div p
+Hijo directo -> div > p
+elemento adyacente -> div + p
+general de hermanos -> div ~ p
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background: papayawhip;
+        }
+        div{
+            background: pink;
+        }
+        .titulo{
+            color: blueviolet;
+        }
+        #titulo2{
+            color: brown;
+        }
+        a[href= "https://platzi.com/home"] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">Hola</div>
+    <div id="titulo2">Mundo</div>
+    <a href="https://platzi.com/home">Go to platzi</a>
+</body>
+</html>
+
+Tipo de selectores combinadores
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p{
+            color: lime;
+        }
+        div > div{
+            background: plum;
+        }
+        .es{
+            background: red;
+        }
+        div + section{
+            background: palevioletred;
+        }
+        div ~ p{
+            color: powderblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <p>Holaaa</p>
+            <div class="es">ES</div>
+        </div>
+    </div>
+    <p>Clase de selectores </p>
+    <p>Clase de selectores </p>
+    <section>
+        Soy lo mejor
+    </section>
+    <div>
+        Master
+    </div>
+</body>
+</html>
+
+
+desafio selector de tipo:
+Intenta dar un color de fondo a 10 etiquetas <div> con un solo selector, utiliza la propiedad background-color.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>Hola</div>
+    <div>Mi</div>
+    <div>Nombre</div>
+    <div>Es</div>
+    <div>Luis</div>
+    <div>Mario</div>
+    <div>Cuello</div>
+    <div>Royero</div>
+    <div>Y soy</div>
+    <div>Aprendiz Sena</div>
+</body>
+</html>
+
+Desafio selector de clase
+De un conjunto de etiquetas <div> intenta dar un color de fondo a las etiquetas que contengan la clase "card" con un solo selector. Después, intenta dar un color de letra diferente para las etiquetas que contengan "card1" y "card2"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>Hola</div>
+    <div>Mi</div>
+    <div>Nombre</div>
+    <div>Es</div>
+    <div>Luis</div>
+    <div>Mario</div>
+    <div>Cuello</div>
+    <div>Royero</div>
+    <div>Y soy</div>
+    <div>Aprendiz Sena</div>
+</body>
+</html>
+
+Desafio selector id
+De un conjunto de etiquetas <button>, existe un único botón para eliminar. Intenta colocar un color de fondo rojo a este elemento.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #alert{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button>crear</button>
+    <button>insertar</button>
+    <button>examinar</button>
+    <button>buscar</button>
+    <button id="alert">ELIMINAR</button>
+</body>
+</html>
+
+Desafio  de selector de atributo
+Intenta colocar un color de fondo a las etiquetas <a> que contengan el atributo href con el valor de "https://platzi.com".
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a[href="https://platzi.com/new-home"] {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://platzi.com/new-home">ir a platzi</a>
+</body>
+</html>
+
+desafio de selector universal
+Intenta colocar un color de fondo a todos los elementos del documento.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div>Hola</div>
+    <div>Soy yo</div>
+</body>
+</html>
+
+Desafio de combinador de descendientes
+Intenta colocar un color de letra a todas las etiquetas <li> que son hijos de la clase "container".
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container li{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <li>hola</li>
+        <li>Eres</li>
+        <li>Feliz?</li>
+    </div>
+</body>
+</html>
+
+Desafio de combinador de hijo directo
+Intenta colocar un color de letra a todos las etiquetas <p> que son hijos directos de la clase "container".
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container > p{
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>que viva mi tierrita</p>
+        <p>Un platanal</p>
+        <p>Irremplazable</p>
+        <div>
+            <p> yuca con suero</p>
+        </div>
+    </div>
+</body>
+</html>
+
+Desafio de elemento adyacente
+Intenta colocar un color de letra a todos las etiquetas <p> que están adyacente a las etiquetas <div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div + p{
+            color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>que viva mi tierrita</p>
+        <p>Un platanal</p>
+        <p>Irremplazable</p>
+        <div>
+            <p> yuca con suero</p>
+        </div>
+    </div>
+</body>
+</html>
+
+desafio de combinador general de hermanos
+Intenta colocar un color de letra a todos las etiquetas <p> que son hermanos de <div>.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div ~ p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>que viva mi tierrita</p>
+        <p>Un platanal</p>
+        <p>Irremplazable</p>
+        <div>
+            <p> yuca con suero</p>
+        </div>
+        <p>Soy algo llamado hermado de div</p>
+    </div>
+</body>
+</html>
