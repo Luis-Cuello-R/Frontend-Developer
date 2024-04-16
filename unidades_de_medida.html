@@ -1,0 +1,57 @@
+En css existen dos tipos de medida
+
+Absolutas:
+- px (píxeles) ➡ Unidad de medida estática que representa un píxel en la pantalla.
+- pc (picas) ➡ Equivalente a 12 puntos (1/6 de pulgada). Se usa principalmente en impresión.
+- pt (puntos) ➡ Unidad de medida comúnmente utilizada en impresión, donde 1 punto es aproximadamente igual a 1/72 de pulgada.
+- in (pulgadas) ➡ Unidad de medida que representa una pulgada física en el dispositivo de salida.
+- cm (centímetros) ➡ Unidad de medida que representa una longitud en centímetros.
+- mm (milímetros) ➡ Unidad de medida que representa una longitud en milímetros.
+
+Relativas:
+- rem (tamaño de la raíz de la fuente) ➡ Es relativo al tamaño de la fuente del elemento raíz del documento.
+- em (tamaño de la fuente del elemento) ➡ Relativo al tamaño de la fuente del elemento actual.
+- vw (ancho de la ventana) ➡ Relativo al 1% del ancho de la ventana del navegador.
+- vh (alto de la ventana) ➡ Relativo al 1% del alto de la ventana del navegador.
+- vmin (mínimo entre vw y vh) ➡ Relativo al 1% del menor valor entre el ancho y el alto de la ventana del navegador.
+- vmax (máximo entre vw y vh) ➡ Relativo al 1% del mayor valor entre el ancho y el alto de la ventana del navegador.
+- ex (altura de la x) ➡ Relativo a la altura de la letra minúscula 'x' de la fuente actual.
+- ch (ancho del 0) ➡ Relativo al ancho del carácter "0" en la fuente actual.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            margin: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        p {
+            font-size: 2rem;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: plum; 
+        }
+    </style>
+</head>
+<body>
+    <div>Hola</div>
+    <p>Genio</p>
+    <div class="container">
+
+    </div>
+</body>
+</html>
