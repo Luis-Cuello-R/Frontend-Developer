@@ -1,0 +1,183 @@
+EJERSICIO PROPUESTO POR LA CLASE
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            background: palegoldenrod;
+        }
+        .one {
+            z-index: 5;
+        }
+        .two {
+            z-index: 4;
+        }
+        .red {
+            width: 20px;
+            height: 20px;
+            background: red;
+            z-index: 5;
+        }
+        .blue {
+            width: 20px;
+            height: 20px;
+            background: blue;
+            z-index: 4;
+        }
+        .yellow {
+            width: 20px;
+            height: 20px;
+            background: yellow;
+            z-index: 6;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="one">Yo soy</div>
+    <div class="two">Libre</div> -->
+
+    <section>
+        <div class="red">Red</div>
+        <div class="blue">blue
+            <div class="yellow">yellow</div>
+        </div>
+    </section>
+</body>
+</html>
+
+EJERCISIO PARA PRACTICA
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(48,220,157,1) 48%, rgba(0,212,255,1) 100%); 
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+      }
+      .circular {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background: #4ecdc4; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #556270,
+          #4ecdc4
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #556270,
+          #4ecdc4
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .row {
+        display: inline-block;
+      }
+      .one {
+        z-index: 10;
+        background: blue;
+      }
+      .two {
+        margin-top: -150px;
+        margin-left: -100px;
+        z-index: 9;
+        background: #4ecdc4;
+      }
+      .three {
+        margin-top: -100px;
+        margin-left: 100px;
+        z-index: 9;
+        background: #4ecdc4;
+      }
+      .four {
+        margin-left: -100px;
+        z-index: 9;
+        background: #4ecdc4;
+      }
+      .five {
+        margin-top: -100px;
+        margin-left: 100px;
+        z-index: 9;
+        background: #4ecdc4;
+      }
+      .six {
+        margin-top: -250px;
+        z-index: 8;
+        background: purple;
+      }
+      .seven {
+        margin-left: -200px;
+        z-index: 8;
+        background: purple;
+      }
+      .eight {
+        z-index: 8;
+        background: purple;
+      }
+      .nine {
+        margin-left: 200px;
+        margin-top: -200px;
+        z-index: 8;
+        background: purple;
+      }
+      .ten {
+        margin-left: -160px;
+        margin-top: -180px;
+        z-index: 7;
+        background: crimson;
+      }
+      .eleven {
+        margin-left: -160px;
+        margin-top: 60px;
+        z-index: 7;
+        background: crimson;
+      }
+      .twelve {
+        margin-left: 160px;
+        margin-top: -100px;
+        z-index: 7;
+        background: crimson;
+      }
+      .thirteen {
+        margin-left: 160px;
+        margin-top: -260px;
+        z-index: 7;
+        background: crimson;
+      }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="circular one"></div>
+        <div class="circular two"></div>
+        <div class="circular three"></div>
+        <div class="circular four"></div>
+        <div class="circular five"></div>
+        <div class="circular six"></div>
+        <div class="circular seven"></div>
+        <div class="circular eight"></div>
+        <div class="circular nine"></div>
+        <div class="circular ten"></div>
+        <div class="circular eleven"></div>
+        <div class="circular twelve"></div>
+        <div class="circular thirteen"></div>
+      </section>
+</body>
+</html>
