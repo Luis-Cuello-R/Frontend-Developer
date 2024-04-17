@@ -1,0 +1,205 @@
+---- Lo siguiente es parte de un articulo de una pagina llamada medium ----
+
+CSS orientado a objetos (OOCSS)
+
+CSS orientado a objetos (OOCSS) nos permite separar el contenedor y el contenido con “objetos” CSS
+
+Al igual que con cualquier método de codificación basado en objetos, el objetivo de OOCSS es fomentar
+la reutilización del código y, en última instancia, hojas de estilo más rápidas y eficientes que son más fáciles de agregar y mantener.
+
+Como se describe en la página Wiki del repositorio OOCSS GitHub , OOCSS se basa en dos principios:
+1. Estructura y piel separadas.
+
+Casi todos los elementos en una página web con estilo tienen diferentes características visuales que se
+repiten en diferentes contextos y (los colores, degradados o los bordes visibles). Por otro lado, también
+se repiten otras características generalmente invisibles (es decir, “estructura”).
+
+Cuando estas características diferentes se abstraen en módulos basados ​​en clases, se vuelven reutilizables
+y se pueden aplicar a cualquier elemento y tienen el mismo resultado básico.
+
+Antes de aplicar los principios de OOCSS, puede tener CSS que se ve así:
+
+#button {
+  width: 200px;
+  height: 50px;
+  padding: 10px;
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+
+#box {
+  width: 400px;
+  overflow: hidden;
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+
+#widget {
+  width: 500px;
+  min-height: 200px;
+  overflow: auto;
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+
+Los tres elementos anteriores tienen estilos que son únicos para cada uno y se aplican con el selector de ID
+no reutilizable para definir los estilos. Pero también tienen varios estilos en común. Los estilos comunes
+pueden existir para fines de marca o consistencia de diseño.
+
+Con un poco de planificación y previsión, podemos abstraer los estilos comunes para que el CSS termine así:
+
+.button {
+  width: 200px;
+  height: 50px;
+}
+
+.box {
+  width: 400px;
+  overflow: hidden;
+}
+
+.widget {
+  width: 500px;
+  min-height: 200px;
+  overflow: auto;
+}
+
+.skin {
+  border: solid 1px #ccc;
+  background: linear-gradient(#ccc, #222);
+  box-shadow: rgba(0, 0, 0, .5) 2px 2px 5px;
+}
+
+Ahora todos los elementos están usando clases, los estilos comunes se combinan en una “máscara” reutilizable
+y nada se repite innecesariamente. Solo tenemos que aplicar la clase “skin” a todos los elementos y el resultado
+será el mismo que el que produciría el primer ejemplo, excepto con menos código y una posibilidad de reutilización adicional .
+2. Contenedor separado y contenido
+
+El segundo principio descrito en la página wiki OOCSS GitHub es la separación de los contenedores de su contenido. 
+Para ilustrar por qué esto es importante, tome el siguiente CSS:
+
+#sidebar h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .8em;
+  line-height: 1;
+  color: #777;
+  text-shadow: rgba(0, 0, 0, .3) 3px 3px 6px;
+}
+
+Estos estilos se aplicarán a cualquier encabezado de tercer nivel que sea hijo del #sidebarelemento. 
+Pero, ¿qué sucede si queremos aplicar exactamente los mismos estilos a los títulos de tercer nivel que
+aparecen en el pie de página, con la excepción de un tamaño de fuente diferente y una sombra de texto modificada?
+
+Entonces tendríamos que hacer algo como esto:
+
+#sidebar h3, #footer h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  color: #777;
+  text-shadow: rgba(0, 0, 0, .3) 3px 3px 6px;
+}
+
+#footer h3 {
+  font-size: 1.5em;
+  text-shadow: rgba(0, 0, 0, .3) 2px 2px 4px;
+}
+
+O podríamos terminar con algo peor:
+
+#sidebar h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  line-height: 1;
+  color: #777;
+  text-shadow: rgba(0, 0, 0, .3) 3px 3px 6px;
+}
+
+/* other styles here.... */
+
+#footer h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  line-height: 1;
+  color: #777;
+  text-shadow: rgba(0, 0, 0, .3) 2px 2px 4px;
+}
+
+Ahora estamos duplicando estilos innecesariamente , y es posible que no nos demos cuenta (o simplemente no nos importe).
+Con OOCSS, se nos recomienda que prestemos más atención a lo que es común entre los diferentes elementos, luego separemos
+esas características comunes en módulos u objetos, que se pueden reutilizar en cualquier lugar.
+
+Los estilos que se declaran utilizando el selector descendente en los ejemplos anteriores no son reutilizables
+, ya que dependen de un contenedor particular (en este caso, la barra lateral o el pie de página).
+
+Cuando usamos la construcción de módulos basados ​​en clases de OOCSS, nos aseguramos de que nuestros estilos
+no dependan de ningún elemento contenedor. Esto significa que pueden reutilizarse en cualquier parte del documento, independientemente del contexto estructural.
+
+
+
+
+
+
+
+
+
+Scalable and Modular Architecture for CSS (SMACSS).
+
+En el núcleo de SMACSS (Arquitectura en CSS Escalable y Modular) está la categorización. Al clasificar las re
+glas CSS, comenzamos a ver patrones y podemos definir mejores prácticas en torno a cada uno de estos patrones.
+
+Cada categoría tiene ciertas pautas que se aplican a ella. Esta separación algo sucinta nos permite hacernos 
+preguntas durante el proceso de desarrollo. ¿Cómo vamos a codificar las cosas y por qué las vamos a codificar de esa manera?
+
+Gran parte del propósito de categorizar cosas es codificar patrones, cosas que se repiten dentro de nuestro diseño.E
+stas son todas las victorias. Las excepciones a la regla pueden ser ventajosas, pero deben justificarse.
+
+Las reglas básicas son las predeterminadas. Son casi exclusivamente selectores de un solo elemento, pero podría incluir
+selectores de atributos, selectores de pseudo-clase, selectores secundarios o selectores hermanos. Esencialmente, un estilo
+de base dice que dondequiera que este elemento se encuentra en la página, que debe ser similar esto .
+
+Ejemplos de estilos base:
+
+html, body, form { margin: 0; padding: 0; } input[type=text] { border: 1px solid #999; } a { color: #039; } a:hover { color: #03C; }
+
+Al separar las reglas en las cinco categorías, la convención de nomenclatura es beneficiosa para comprender de inmediato a qué
+categoría pertenece un estilo en particular y su función dentro del alcance general de la página. En proyectos grandes, es más
+probable que los estilos se dividan en varios archivos. En estos casos, la convención de nomenclatura también facilita encontrar a que archivo pertenece un estilo.
+
+El objetivo principal de esta metodología es reducir la cantidad de código y simplificar el mantenimiento. Para ello, se dividen los estilos en cinco partes:
+
+    Reglas básicas: se establecen los estilos por defectos de los elementos HTML individuales, los típicos selectores CSS de tipo. Por ejemplo, reset, html, body, button, h1, etc.
+    Reglas del layout: se divide la página en secciones (header, main content, footer, navigation, etc.) y se asignan los estilos relacionados con su estructura.
+    Reglas de módulos: elementos que pueden ser reusables, modulares e independientes del contexto. Por ejemplo: llamadas a la acción o galerías de imágenes.
+    Reglas de estados: se define el comportamiento del layout y sus módulos en diferentes estados: hover, active, diferentes resoluciones, etc.).
+    Reglas de temas: estilos que afectan al layout y módulos. Estas reglas son opcionales, y las puedes utilizar para estilos que puede que quieras
+reemplazar (normalmente se utiliza en sitios web que cuentan con varios temas, por ejemplo, uno oscuro y uno claro).
+
+
+
+
+
+
+
+
+
+
+Scalable and Maintainable CSS Architecture — Xfive
+
+ITCSS es una arquitectura que tiene como principal objetivo estructurar la forma en la que escribimos CSS.
+
+Uno de los principios clave de ITCSS es que separa su base de código CSS en varias secciones (llamadas capas ), que toman la forma del triángulo invertido:
+
+Esas capas son las siguientes:
+
+    Configuración : se utiliza con preprocesadores y contiene fuentes, definiciones de colores, etc.
+    Herramientas : mixins y funciones de uso global. Es importante no generar ningún CSS en las 2 primeras capas.
+    Genérico : restablecer y / o normalizar estilos, definición de tamaño de caja, etc. Esta es la primera capa que genera CSS real.
+    Elementos : estilo para elementos HTML desnudos (como H1, A, etc.). Estos vienen con un estilo predeterminado del navegador para que podamos redefinirlos aquí.
+    Objetos : selectores basados ​​en clases que definen patrones de diseño no decorados, por ejemplo, objetos de medios conocidos de OOCSS
+    Componentes : componentes específicos de la interfaz de usuario. Aquí es donde tiene lugar la mayor parte de nuestro trabajo y nuestros componentes de
+    la interfaz de usuario a menudo están compuestos de objetos y componentes
+    Utilidades : utilidades y clases auxiliares con la capacidad de anular cualquier cosa anterior al triángulo, por ejemplo. ocultar clase auxiliar
