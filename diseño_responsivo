@@ -1,0 +1,34 @@
+¿Qué son los media queries?
+
+Las media queries permiten a las páginas web utilizar diferentes declaracion
+es de estilo de la hoja de estilos en base al ancho de la pantalla del dispositivo en el 
+que se visualiza el sitio web. En los diseños web responsive, una media query es una 
+declaración CSS que se utiliza como parámetro para saber cuándo utilizar otra declaración de estilo en base a las dimens-
+iones del dispositivo en donde se visualiza la página web. Hay dos maneras de utilizar una media query: utilizando una hoja
+de estilos externa o escribiendo directamente en la hoja de estilos.
+
+Ejemplo de una media 
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background: papayawhip;
+        }
+        @media (max-width: 300px) {
+            div {
+            background: green;
+        } 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Camino solo
+    </div>
+</body>
+</html>
